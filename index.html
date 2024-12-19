@@ -1,33 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micah Gall's Flappy Bird</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Bird Game</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #70c5ce; /* Sky color */
+    }
+    #gameCanvas {
+      display: block;
+      margin: 0 auto;
+      background-color: #70c5ce;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .bird {
+      width: 20px;
+      height: 20px;
+      background-color: yellow;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 5px;
+    }
+    .ground {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #8b4513; /* Ground color */
+    }
+    .pipe {
+      position: absolute;
+      background-color: #008000; /* Green pipe */
+      width: 50px;
+      bottom: 0;
+      z-index: 1;
+    }
+    .pipe-top {
+      position: absolute;
+      background-color: #008000;
+      width: 50px;
+      z-index: 1;
+    }
+    .score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 24px;
+      color: white;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>This was made by Micah Gall</h1>
-    <button id="playButton">Play Flappy Bird</button>
-
-    <div id="gameContainer" style="display: none;">
-        <canvas id="gameCanvas" width="320" height="480"></canvas>
-    </div>
-
-    <div class="background"></div>
-    <img class="bird" src="logo.png" alt="bird-img">
-    <div class="message">
-        Press Enter To Start Game
-    </div>
-    <div class="score">
-        <span class="score_title"></span>
-        <span class="score_val"></span>
-    </div>
-
-    <script src="script.js"></script>
-    <script src="gfg.js"></script>
+  <div id="gameCanvas">
+    <div id="bird" class="bird"></div>
+    <div class="ground"></div>
+    <div class="score" id="score">Score: 0</div>
+  </div>
+  <script src="game.js"></script>
 </body>
-
 </html>
