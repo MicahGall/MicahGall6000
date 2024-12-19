@@ -1,78 +1,107 @@
- * {
-margin: 0;
-padding: 0;
-font-family: 'Lobster', cursive;
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f62fe;
+    height: 100vh;
 }
-.game{
-background-image: url(bg.jpg);
-background-repeat: no-repeat;
-background-size: 100% 100%;
+.roadWrapper {
+    position: relative;
+    width: 1300px;
+    height: 160px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(50deg);
 }
-.hide {
-display: none;
+.roadWrapper:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #fff, 0%, #fff, 70%, #525252, 100%, #525252);
+    background-size: 120px;
+    animation: move 0.6s linear infinite;
 }
-.startScreen {
-width: 500px;
-height: 107px;
-line-height: 20px;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 2;
-margin: auto;
-background-color: rgb(43, 205, 226);
-text-align: center;
-border-bottom: 2px solid rgb(132, 197, 197);
+@keyframes move {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: 120px;
+    }
 }
-.score,
-.highScore {
-position: absolute;
-top: 10px;
-left: 20px;
-text-align: center;
-background-color: rgb(100, 224, 156);
-width: 200px;
-color: rgb(59, 40, 40);
-line-height: 40px;
-border-radius: 4px;
-font-size: 1.2em;
+.roadWrapper:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: #333;
+    transform: perspective(500px) rotateX(-25deg);
+    bottom: -30px;
+    transform-origin: top;
+    height: 30px;
 }
-.ClickToStart {
-cursor: pointer;
+.relow {
+    position: relative;
 }
-.gameArea {
-height: 100vh;
-width: 400px;
-margin: auto;
-position: relative;
-background-color: rgb(32, 32, 32);
-overflow: hidden;
-border-left: 4px dashed white;
-border-right: 4px dashed white;
+.carWrapper {
+    position: absolute;
+    top: 85px;
+    left: 120px;
 }
-.car{
-background: url(car.png);
-background-repeat: no-repeat;
-background-size: 100% 100%;
-height: 75px;
-width: 50px;
-position: absolute;
-top: 520px;
+.carWrapper.left_pressed {
+    top: 60px;
+    left: 150px;
 }
-.Opponents {
-background: url(opponent car.png);
-background-repeat: no-repeat;
-background-size: 100% 100%;
-height: 75px;
-width: 50px;
-position: absolute;
-top: 520px;
+.carWrapper.right_pressed {
+    top: unset;
+    bottom: 10px;
 }
-.roadLines {
-height: 100px;
-width: 10px;
-background-color: white;
-position: absolute;
-margin-left: 195px;
+.roadWrapper.low-speed::before {
+    animation: move linear 1.6s infinite;
+}
+.roadWrapper.high-speed::before {
+    animation: move linear .3s infinite;
+}
+.high-speed ~.carWrapper {
+    animation: moveforwards 3s linear infinite;
+}
+@keyframes moveforwards {
+    0% {
+        transform: translateX(0px);
+    }
+    10% {
+        transform: translateX(100px);
+    }
+    20% {
+        transform: translateX(200px);
+    }
+    30% {
+        transform: translateX(300px);
+    }
+    40% {
+        transform: translateX(400px);
+    }
+    50% {
+        transform: translateX(500px);
+    }
+    60% {
+        transform: translateX(600px);
+    }
+    70% {
+        transform: translateX(700px);
+    }
+    80% {
+        transform: translateX(800px);
+    }
+    90% {
+        transform: translateX(900px);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
 }
