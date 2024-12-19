@@ -8,16 +8,13 @@ h1 {
     color: #333;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: blue;
-}
-
-a:hover {
-    color: darkblue;
+#gameContainer {
+    margin-top: 20px;
 }
