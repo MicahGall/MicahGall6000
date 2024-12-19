@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micah Gall's Flappy Bird</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>This was made by Micah Gall</h1>
     <button id="playButton">Play Flappy Bird</button>
+
     <div id="gameContainer" style="display: none;">
         <canvas id="gameCanvas" width="320" height="480"></canvas>
     </div>
+
+    <div class="background"></div>
+    <img class="bird" src="logo.png" alt="bird-img">
+    <div class="message">
+        Press Enter To Start Game
+    </div>
+    <div class="score">
+        <span class="score_title"></span>
+        <span class="score_val"></span>
+    </div>
+
     <script src="script.js"></script>
+    <script src="gfg.js"></script>
 </body>
+
 </html>
