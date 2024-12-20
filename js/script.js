@@ -2,7 +2,7 @@
 //money, inventory, jackpot
 (function(){
 var itemCounter = 0;
-var fps = 15;
+var fps = 30;
 
 var money = 7.50;
 var username = localStorage.getItem('username');
@@ -15,7 +15,7 @@ if (localStorage.getItem("imgData") === null) {
 }
 
 var currentCase = "case1";
-var acceptMoneyPerClick = 0.1;
+var acceptMoneyPerClick = 0.5;
 
 /*=========================Inventory============================*/
 //In inventory: weap skins
@@ -37,7 +37,7 @@ var jackpotInventory = {};
 var inventoryMax = 50;
 var inventoryCurrent = 0;
 
-var keyPrice = 2.50;
+var keyPrice = 1;
 
 var caseDiscount = 0;
 var keyDiscount = 0;
