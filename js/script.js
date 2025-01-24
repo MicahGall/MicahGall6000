@@ -2,7 +2,7 @@
 //money, inventory, jackpot
 (function(){
 var itemCounter = 0;
-var fps = 30;
+var fps = 1000;
 
 var money = 7.50;
 var username = localStorage.getItem('username');
