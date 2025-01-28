@@ -3,4 +3,4 @@
 
 https://yournesw.github.io/MicahGall6000/
 
-https://yournesw.github.io/Mic-games/
+https://yournesw.github.io/Game-/
