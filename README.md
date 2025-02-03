@@ -11,3 +11,6 @@ https://danihre.github.io/jsdoom/
 
 block blask:
 https://micahgall.github.io/Block-blast/
+
+slowroads:
+https://micahgall.github.io/Eddfew/
